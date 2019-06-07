@@ -3,6 +3,7 @@ import { Form, Button, Container } from 'react-bootstrap'
 import Nav from './Nav'
 import { Dialog, Button as ButtonByAuth } from '@auth0/cosmos'
 import Confetti from 'react-confetti'
+import Footer from './Footer'
 
 export default function CGPA (props) {
     const [CGPA, setCGPA] = React.useState({semCount: 0, cgpa: 0})    
@@ -83,6 +84,9 @@ export default function CGPA (props) {
                         Calculate CGPA!
                     </Button> <br/> <br/>
                 </Form>
+            </Container>
+            <Container>
+                <Footer />
             </Container>
         </div>
     )

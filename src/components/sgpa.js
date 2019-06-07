@@ -3,6 +3,7 @@ import { Form, Button, Container } from 'react-bootstrap'
 import Nav from './Nav'
 import { Dialog, Button as ButtonByAuth } from '@auth0/cosmos'
 import Confetti from 'react-confetti'
+import Footer from './Footer'
 
 export default function Sgpa(props) { 
     const [SGPA, setSGPA] = React.useState(null)
@@ -144,6 +145,9 @@ export default function Sgpa(props) {
                         ))}
                         <Button type="submit">Calculate SGPA!</Button> <br/> <br/>
                     </Form>
+                </Container>
+                <Container>
+                    <Footer />
                 </Container>
             </div>
         )

@@ -2,6 +2,7 @@ import React from 'react'
 import { Form, Button, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Nav from './Nav'
+import Footer from './Footer'
 
 function App(props) {
   const [electiveNo, setElectiveNo] = React.useState(0)
@@ -71,6 +72,9 @@ function App(props) {
              Calculate CGPA here!
           </p>
       </Form>
+    </Container>
+    <Container>
+      <Footer />
     </Container>
     </div>
   );
