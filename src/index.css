@@ -65,6 +65,10 @@ input, a > button, .go_cgpa {
   box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.07);
 }
 
+span {
+  font-weight: bold !important;
+}
+
 .go_cgpa {  
   color: #1F355D !important;
   font-weight: bold !important;
