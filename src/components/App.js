@@ -24,7 +24,7 @@ function App() {
              min="0" 
              max="6" 
              required
-             onChange={(e) => console.log(e.target.value) || setElectiveNo(e.target.value)} 
+             onChange={(e) => setElectiveNo(e.target.value)} 
             />
           </Form.Group>
           <Form.Group>
@@ -35,7 +35,7 @@ function App() {
              min="0" 
              max="6" 
              required
-             onChange={(e) => console.log(e.target.value) || selectMainNo(e.target.value)} 
+             onChange={(e) => selectMainNo(e.target.value)} 
             />
           </Form.Group>
           <Form.Group>
@@ -46,7 +46,7 @@ function App() {
              min="0" 
              max="3" 
              required
-             onChange={(e) => console.log(e.target.value) || selectLabNo(e.target.value)} 
+             onChange={(e) => selectLabNo(e.target.value)} 
             />
           </Form.Group>
           <Link to={{
