@@ -8,6 +8,10 @@ export default function Sgpa(props) {
     const [SGPA, setSGPA] = React.useState(null)
     const [dialog, setDialog] = React.useState(false)
 
+    React.useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     React.useEffect(() => {
         if(props.location.state === undefined || props.location.state.electiveNo === 0
          || props.location.state.mainNo === 0 || props.location.state.labNo === 0) {

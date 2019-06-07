@@ -8,6 +8,10 @@ function App() {
   const [mainNo, selectMainNo] = React.useState(0)
   const [labNo, selectLabNo] = React.useState(0)
 
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="App">
     <Container>
