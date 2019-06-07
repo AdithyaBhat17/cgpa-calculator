@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  height: 100%;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+  src: url('./assets/fonts/black.ttf');
+  font-family: 'SF';
+  font-weight: bold;
+}
+
+@font-face {
+  src: url('./assets/fonts/regular.ttf');
+  font-family: 'SF';
+  font-weight: normal;
+}
+
+body, .App {
+  font-family: 'SF';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1F355D;
+  color: #C0ECEC;
+}
+
+img {
+  max-width: 100%;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.back {
+  width: 30px;
+  margin-top: 5px;
+}
+
+header {
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-between;
+}
+
+h1, h5 {
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+a > button, .btn, .proceed {
+  color: #1F355D !important;
+  font-weight: bold !important;
+  background-color: #6FBEDB !important; 
+  border: none !important;
+  margin: 0 auto;
+  display: block;
+}
+
+input, a > button, .go_cgpa {
+  box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.07);
+}
+
+.go_cgpa {  
+  color: #1F355D !important;
+  font-weight: bold !important;
+  background-color: #6FBEDB !important; 
+  border: none !important;
+  border-radius: 4px;
+}
+
+a:hover, a:focus, a:active {  
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  p {
+    text-align: left;
+  }
 }
