@@ -1,6 +1,7 @@
 import React from 'react'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import Nav from './Nav'
 
 function App() {
   const [electiveNo, setElectiveNo] = React.useState(0)
@@ -9,6 +10,11 @@ function App() {
 
   return (
     <div className="App">
+    <Container>
+    <Nav />
+      <h1>Hello there!</h1>
+      <p>Studying in a VTU college? Get your SGPA and CGPA scores here!</p>
+      <h5>SGPA Calculator</h5>
       <Form>
           <Form.Group>
             <Form.Label>Number of Electives</Form.Label> <br/>
@@ -17,6 +23,7 @@ function App() {
              type="number" 
              min="0" 
              max="6" 
+             required
              onChange={(e) => console.log(e.target.value) || setElectiveNo(e.target.value)} 
             />
           </Form.Group>
@@ -27,6 +34,7 @@ function App() {
              type="number" 
              min="0" 
              max="6" 
+             required
              onChange={(e) => console.log(e.target.value) || selectMainNo(e.target.value)} 
             />
           </Form.Group>
@@ -37,6 +45,7 @@ function App() {
              type="number" 
              min="0" 
              max="3" 
+             required
              onChange={(e) => console.log(e.target.value) || selectLabNo(e.target.value)} 
             />
           </Form.Group>
@@ -48,11 +57,17 @@ function App() {
               labNo
             }
           }}>
-            <Button>
-              Proceed ->
+            <Button className="proceed">
+              Proceed
             </Button>
           </Link>
+          <p
+           onClick={() => alert('Still working on this Amigo :(')} 
+           style={{textAlign: 'center', marginTop: 10, color: '#6FBEDB'}}>
+             Calculate CGPA here!
+          </p>
       </Form>
+    </Container>
     </div>
   );
 }
