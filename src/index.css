@@ -77,6 +77,11 @@ span {
   border-radius: 4px;
 }
 
+.loading  {
+  display: block;
+  margin: 45vh auto;
+}
+
 a:hover, a:focus, a:active {  
   text-decoration: none;
 }
