@@ -142,7 +142,7 @@ export default function Sgpa(props) {
                                 {input}
                             </div>
                         ))}
-                        <Button type="submit">Submit</Button> <br/> <br/>
+                        <Button type="submit">Calculate SGPA!</Button> <br/> <br/>
                     </Form>
                 </Container>
             </div>

@@ -3,7 +3,7 @@ import { Form, Button, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Nav from './Nav'
 
-function App() {
+function App(props) {
   const [electiveNo, setElectiveNo] = React.useState(0)
   const [mainNo, selectMainNo] = React.useState(0)
   const [labNo, selectLabNo] = React.useState(0)
@@ -66,7 +66,7 @@ function App() {
             </Button>
           </Link>
           <p
-           onClick={() => alert('Still working on this Amigo :(')} 
+           onClick={() => props.history.push('/cgpa')} 
            style={{textAlign: 'center', marginTop: 10, color: '#6FBEDB'}}>
              Calculate CGPA here!
           </p>
@@ -76,4 +76,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
