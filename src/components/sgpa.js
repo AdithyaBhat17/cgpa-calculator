@@ -62,7 +62,7 @@ export default function Sgpa(props) {
         for (let i = 1; i <= labNo; i++)
             array.push(
                 <Form.Group key={i}>
-                    <Form.Label>Lab {i}'s marks:</Form.Label>
+                    <Form.Label>Lab / seminar / internship {i}'s marks:</Form.Label>
                     <Form.Control
                         required
                         name="labMarks" 
@@ -94,17 +94,17 @@ export default function Sgpa(props) {
 
         let mainMarks = 0, electiveMarks = 0, labMarks = 0, phase2Marks = 0, SGPA = 0
 
-        for(let i=0; mainNo != 1 ? i<mainNo : i<=mainNo; i++) 
+        for(let i=0; parseInt(mainNo) !== 1 ? i<mainNo : i<=mainNo; i++) 
             parseInt(mainNo) !== 1 ?
             mainMarks += Math.floor(e.target.mainMarks[i].value / 10 + 1) * 4 :
             mainMarks = Math.floor(e.target.mainMarks.value / 10 + 1) * 4
         
-        for(let i=0; electiveNo != 1 ? i<electiveNo : i<=electiveNo;i++)
+        for(let i=0; parseInt(electiveNo) !== 1 ? i<electiveNo : i<=electiveNo;i++)
             parseInt(electiveNo) !== 1 ?
             electiveMarks += Math.floor(e.target.electiveMarks[i].value / 10 + 1) * 3 :
             electiveMarks = Math.floor(e.target.electiveMarks.value / 10 + 1) * 3        
 
-        for(let i=0; labNo != 1 ? i<labNo : i<=labNo; i++) 
+        for(let i=0; parseInt(labNo) !== 1 ? i<labNo : i<=labNo; i++) 
             parseInt(labNo) !== 1 ?
             labMarks += Math.floor(e.target.labMarks[i].value / 10 + 1) * 2 :
             labMarks = Math.floor(e.target.labMarks.value / 10 + 1) * 2

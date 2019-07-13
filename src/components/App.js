@@ -57,12 +57,13 @@ function App(props) {
           </Form.Group>
           <Form.Group>
             <Form.Check
+             style={{fontWeight: "bold"}}
              checked={phase2}
              onChange={() => setPhase2(!phase2)} 
              type="checkbox" 
              label="Project Phase 2?">
             </Form.Check>
-          </Form.Group>
+          </Form.Group> <br/>
           <Link to={{
             pathname: '/sgpa',
             state: {
