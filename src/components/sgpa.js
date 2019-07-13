@@ -75,32 +75,51 @@ export default function Sgpa(props) {
         return array
     }
 
+    const renderPhase2Input = () => (
+        <Form.Group>
+            <Form.Label>Phase 2 Project marks(out of 200):</Form.Label>
+            <Form.Control
+                required
+                name="phase2Marks" 
+                type="number" 
+                min="0" 
+                max="200" 
+            />
+        </Form.Group>
+    )
+
     const calculateSGPA = async (e) => {
         e.preventDefault()
-        const { mainNo, electiveNo, labNo } = props.location.state
+        const { mainNo, electiveNo, labNo, phase2No } = props.location.state
 
-        let mainMarks = 0, electiveMarks = 0, labMarks = 0, SGPA = 0
+        let mainMarks = 0, electiveMarks = 0, labMarks = 0, phase2Marks = 0, SGPA = 0
 
-        for(let i=0;i<mainNo;i++) {
-            mainMarks += Math.floor(e.target.mainMarks[i].value / 10 + 1) * 4
-        }
+        for(let i=0; mainNo != 1 ? i<mainNo : i<=mainNo; i++) 
+            parseInt(mainNo) !== 1 ?
+            mainMarks += Math.floor(e.target.mainMarks[i].value / 10 + 1) * 4 :
+            mainMarks = Math.floor(e.target.mainMarks.value / 10 + 1) * 4
+        
+        for(let i=0; electiveNo != 1 ? i<electiveNo : i<=electiveNo;i++)
+            parseInt(electiveNo) !== 1 ?
+            electiveMarks += Math.floor(e.target.electiveMarks[i].value / 10 + 1) * 3 :
+            electiveMarks = Math.floor(e.target.electiveMarks.value / 10 + 1) * 3        
 
-        for(let i=0;i<electiveNo;i++) {
-            electiveMarks += Math.floor(e.target.electiveMarks[i].value / 10 + 1) * 3
-        }
+        for(let i=0; labNo != 1 ? i<labNo : i<=labNo; i++) 
+            parseInt(labNo) !== 1 ?
+            labMarks += Math.floor(e.target.labMarks[i].value / 10 + 1) * 2 :
+            labMarks = Math.floor(e.target.labMarks.value / 10 + 1) * 2
 
-        for(let i=0;i<labNo;i++) {
-            labMarks += Math.floor(e.target.labMarks[i].value / 10 + 1) * 2
-        }
+        phase2No && (phase2Marks = Math.floor(e.target.phase2Marks.value / 20 + 1) * 5)
 
-        SGPA = (mainMarks + electiveMarks + labMarks) / ((mainNo * 4) + (electiveNo * 3) + (labNo * 2))
+        SGPA = (mainMarks + electiveMarks + labMarks + phase2Marks) / 
+        ((mainNo * 4) + (electiveNo * 3) + (labNo * 2) + parseInt(phase2No) * 5)
 
         await setSGPA(parseFloat(SGPA).toFixed(2))
         setDialog(true)
     }
 
     if(props.location.state) {
-        const { electiveNo, mainNo, labNo } = props.location.state
+        const { electiveNo, mainNo, labNo, phase2No } = props.location.state
         return (
             <div>
                 <Container>
@@ -143,6 +162,7 @@ export default function Sgpa(props) {
                                 {input}
                             </div>
                         ))}
+                        {phase2No ? renderPhase2Input() : ''}
                         <Button type="submit">Calculate SGPA!</Button> <br/> <br/>
                     </Form>
                 </Container>
