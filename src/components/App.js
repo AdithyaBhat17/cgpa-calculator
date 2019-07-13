@@ -8,6 +8,7 @@ function App(props) {
   const [electiveNo, setElectiveNo] = React.useState(0)
   const [mainNo, selectMainNo] = React.useState(0)
   const [labNo, selectLabNo] = React.useState(0)
+  const [phase2, setPhase2] = React.useState(false)
 
   React.useLayoutEffect(() => {
     window.scrollTo(0, 0)
@@ -44,7 +45,7 @@ function App(props) {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Number of Labs ( + Project Phase 1 + Seminars)</Form.Label> <br/>
+            <Form.Label>Number of Labs ( + Project Phase 1 + Seminars + Internship)</Form.Label> <br/>
             <Form.Control
              name="mainNo" 
              type="number" 
@@ -54,12 +55,21 @@ function App(props) {
              onChange={(e) => selectLabNo(e.target.value)} 
             />
           </Form.Group>
+          <Form.Group>
+            <Form.Check
+             checked={phase2}
+             onChange={() => setPhase2(!phase2)} 
+             type="checkbox" 
+             label="Project Phase 2?">
+            </Form.Check>
+          </Form.Group>
           <Link to={{
             pathname: '/sgpa',
             state: {
               electiveNo,
               mainNo,
-              labNo
+              labNo,
+              phase2No: phase2 ? 1 : 0
             }
           }}>
             <Button className="proceed">
