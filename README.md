@@ -1,4 +1,6 @@
-A VTU cgpa/sgpa calculator web app built with React hooks, lazy and suspense.
+A VTU cgpa/sgpa calculator web app built with React hooks, lazy and suspense.   
+
+https://sgpa.adithyabhat.com  
 
 ## Installation Guide
 
