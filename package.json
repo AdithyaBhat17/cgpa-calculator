@@ -9,7 +9,7 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-confetti": "^5.0.1",
-    "react-epic-spinners": "^0.3.0",
+    "react-epic-spinners": "^0.4.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0"
   },
